@@ -11,9 +11,9 @@ searchMovieName.addEventListener('click',(e) => {
     try{
       const response = await fetch(`http://www.omdbapi.com/?s=${movie}&apikey=10ba61c0`);
       const movieSearch = await response.json();
-      const container = document.body.appendChild(document.createElement("div"));
-      container.setAttribute('id', 'containerId');
-      container.classList.add('deletable', 'flex', 'flex-col', 'items-center');
+      const containerDeGrosseBite = document.body.appendChild(document.createElement("div"));
+      containerDeGrosseBite.setAttribute('id', 'containerId');
+      containerDeGrosseBite.classList.add('deletable', 'flex', 'flex-col', 'items-center');
       for (let i = 0; i < movieSearch.Search.length; i++) {
         try {
           const movieId = await fetch(`http://www.omdbapi.com/?i=${movieSearch.Search[i].imdbID}&apikey=10ba61c0`);
@@ -63,7 +63,6 @@ searchMovieName.addEventListener('click',(e) => {
             const modal = document.getElementById(`myModal${i}`);
             const btn = document.getElementById(`myBtn${i}`);
             const span = document.getElementsByClassName("close")[i];
-            console.log(span);
             btn.onclick = function() {
               modal.style.display = "block";
             }
