@@ -42,7 +42,7 @@ searchMovieName.addEventListener('click',(e) => {
               <div class="modal-content">
                 <span class="close">&times;</span>
                 <div class="m-auto">
-                  <div class = "max-w-xl rounded-lg shadow-md lg:flex md:flex shadow-sky-600 mt-10 bg-white">
+                  <div class = "bg-white flex">
                     <img class="object-cover w-full md:w-1/2 lg:w-1/3" src="${image}" alt="image">
                     <div class="px-6 py-4">
                       <h4 class="mb-3 text-base font-semibold tracking-tight text-sky-600">
@@ -69,7 +69,7 @@ searchMovieName.addEventListener('click',(e) => {
             span.onclick = function(e) {
               modal.style.display = "none";
             }
-            window.onclick = function(e) {
+            modal.onclick = function(e) {
               if (e.target == modal) {
               modal.style.display = "none";
               }
